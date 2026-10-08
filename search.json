@@ -26,5 +26,12 @@
     "title": "Runtime and Ratings",
     "section": "",
     "text": "This page explores the relationship between film runtime and IMDb rating. Figure 1 shows how ratings vary across films of different lengths.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDb rating\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Film runtimes in minutes and IMDb ratings.\n\n\n\n\n\n\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2)\n\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64"
+  },
+  {
+    "objectID": "bond.html",
+    "href": "bond.html",
+    "title": "The Bond Films",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\nbond = films[films[\"franchise\"] == \"James Bond\"]\nbond = bond.sort_values(\"year\")\n\nThe James Bond films in this dataset range from 1995 to 2021.\n\nplt.plot(bond[\"year\"], bond[\"revenue_musd\"], marker=\"o\")\nplt.xlabel(\"Release year\")\nplt.ylabel(\"Worldwide revenue (million US dollars)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Worldwide revenue of James Bond films over time."
   }
 ]
