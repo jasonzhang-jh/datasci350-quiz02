@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "budget-revenue.html",
+    "href": "budget-revenue.html",
+    "title": "Budget and Revenue",
+    "section": "",
+    "text": "This page explores the relationship between film budgets and worldwide revenues. Figure 1 shows each film as one point, with values in millions of US dollars.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget (million US dollars)\")\nplt.ylabel(\"Worldwide revenue (million US dollars)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Film budgets and worldwide revenues in millions of US dollars."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Box Office Numbers",
+    "section": "",
+    "text": "This dataset contains 104 films. It includes approximate budgets, worldwide revenues, runtimes, and ratings."
+  },
+  {
+    "objectID": "index.html#explore-the-analyses",
+    "href": "index.html#explore-the-analyses",
+    "title": "Box Office Numbers",
+    "section": "Explore the analyses",
+    "text": "Explore the analyses\n\nBudget and Revenue\nRuntime and Ratings\nThe Bond Films\n\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "runtime-rating.html",
+    "href": "runtime-rating.html",
+    "title": "Runtime and Ratings",
+    "section": "",
+    "text": "This page explores the relationship between film runtime and IMDb rating. Figure 1 shows how ratings vary across films of different lengths.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"IMDb rating\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Film runtimes in minutes and IMDb ratings.\n\n\n\n\n\n\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2)\n\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64"
+  }
+]
