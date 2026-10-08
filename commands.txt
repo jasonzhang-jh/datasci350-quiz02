@@ -20,3 +20,8 @@ touch runtime-rating.qmd
 touch bond.qmd
 
 quarto render
+
+git add .
+git commit -m "Add site pages and freeze"
+
+quarto publish gh-pages
