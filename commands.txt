@@ -25,3 +25,11 @@ git add .
 git commit -m "Add site pages and freeze"
 
 quarto publish gh-pages
+
+Realized forgot to save bond.qmd:
+quarto render
+
+git add .
+git commit -m "Add bond page back"
+
+quarto publish gh-pages
