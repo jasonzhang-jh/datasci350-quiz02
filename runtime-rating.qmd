@@ -1,0 +1,30 @@
+---
+title: "Runtime and Ratings"
+jupyter: python3
+---
+
+This page explores the relationship between film runtime and IMDb rating. @fig-runtime-rating shows how ratings vary across films of different lengths.
+
+```{python}
+#| echo: true
+#| label: fig-runtime-rating
+#| fig-cap: "Film runtimes in minutes and IMDb ratings."
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+
+plt.scatter(films["runtime_min"], films["imdb_rating"])
+plt.xlabel("Runtime (minutes)")
+plt.ylabel("IMDb rating")
+plt.show()
+```
+
+
+```{python}
+#| echo: true
+
+films["decade"] = films["year"] // 10 * 10
+films.groupby("decade")["imdb_rating"].mean().round(2)
+```

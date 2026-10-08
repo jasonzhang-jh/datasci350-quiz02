@@ -1,0 +1,13 @@
+---
+title: "Box Office Numbers"
+---
+
+This dataset contains 104 films. It includes approximate budgets, worldwide revenues, runtimes, and ratings.
+
+## Explore the analyses
+
+- [Budget and Revenue](budget-revenue.qmd)
+- [Runtime and Ratings](runtime-rating.qmd)
+- [The Bond Films](bond.qmd)
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

@@ -1,0 +1,12 @@
+{
+  "hash": "ee993ffc8cb4a8cdf86321991c8cf693",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Budget and Revenue\"\njupyter: python3\n---\n\nThis page explores the relationship between film budgets and worldwide revenues. @fig-budget-revenue shows each film as one point, with values in millions of US dollars.\n\n::: {#cell-fig-budget-revenue .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget (million US dollars)\")\nplt.ylabel(\"Worldwide revenue (million US dollars)\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Film budgets and worldwide revenues in millions of US dollars.](budget-revenue_files/figure-html/fig-budget-revenue-output-1.png){#fig-budget-revenue width=602 height=431}\n:::\n:::\n\n\n",
+    "supporting": [
+      "budget-revenue_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
